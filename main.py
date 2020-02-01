@@ -168,6 +168,10 @@ def handleExport(args):
     # Find animation files
     animFiles = findAnimationFilenames(tset)
 
+    if not animFiles:
+        print('Error: no animations found in this tileset. Aborting.')
+        return
+
     # Get some info regarding their filenames
     prefix, isUpper = analyzeAnimFilenames(animFiles)
 
