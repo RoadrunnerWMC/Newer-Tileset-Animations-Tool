@@ -38,7 +38,7 @@ Exporting is done with the "export" (or "e", for short) command.
     positional arguments:
       file        tileset file to export animations from
       output_dir  directory to store exported animation data in (will be cleared
-                  if already exists) (default: input filename plus "_anims"
+                  if already exists) (default: input filename plus "_anims")
 
     optional arguments:
       -h, --help  show this help message and exit

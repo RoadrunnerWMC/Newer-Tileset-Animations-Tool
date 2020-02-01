@@ -297,7 +297,7 @@ def main(args=None):
     parser_export.add_argument('file', type=pathlib.Path,
         help='tileset file to export animations from')
     parser_export.add_argument('output_dir', nargs='?', type=pathlib.Path,
-        help='directory to store exported animation data in (will be cleared if already exists) (default: input filename plus "_anims"')
+        help='directory to store exported animation data in (will be cleared if already exists) (default: input filename plus "_anims")')
     parser_export.set_defaults(func=handleExport)
 
     # Import
