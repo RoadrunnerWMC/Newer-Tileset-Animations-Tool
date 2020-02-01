@@ -5,7 +5,7 @@ A little tool for importing/exporting animations to/from Newer SMB Wii
 tilesets. Not compatible with LH-compressed tilesets, and also doesn't support
 retail-style Pa0 animation data.
 
-Requires Python 3.6 or newer.
+Requires Python 3.6 or newer, with PyQt5 installed.
 
 
 Format of extracted animations
