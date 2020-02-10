@@ -30,26 +30,18 @@ def isAnimFilename(fn):
     """
     Check if the provided filename matches the tile animation filename
     convention:
-        x_nnn.bin
-    or
-        xx_nnn.bin
-    where "x" is any character, and "nnn" is a 3-digit hex number
-    between 000 and 3FF inclusive (either upper- or lowercase)
+        xxxxx_nnn.bin
+    where "x" is any character (and there are any amount of them), and
+    "nnn" is a 3-digit hex number between 000 and 3FF inclusive (either
+    upper- or lowercase)
     """
     if not fn.lower().endswith('.bin'): return False
+    if len(fn) < 9: return False # "x_nnn.bin" -- must have at least 1 x
 
-    if len(fn) == 9:
-        if fn[1] != '_': return False
-        if fn[2] not in '0123': return False
-        if fn[3].lower() not in '0123456789abcdef': return False
-        if fn[4].lower() not in '0123456789abcdef': return False
-    elif len(fn) == 10:
-        if fn[2] != '_': return False
-        if fn[3] not in '0123': return False
-        if fn[4].lower() not in '0123456789abcdef': return False
-        if fn[5].lower() not in '0123456789abcdef': return False
-    else:
-        return False
+    if fn[-8] != '_': return False
+    if fn[-7] not in '0123': return False
+    if fn[-6].lower() not in '0123456789abcdef': return False
+    if fn[-5].lower() not in '0123456789abcdef': return False
 
     return True
 
@@ -318,7 +310,7 @@ def main(args=None):
     parser_import.add_argument('--pa', choices=[0, 1, 2, 3],
         help='tileset number (default: infer from tileset filename)')
     parser_import.add_argument('--prefix',
-        help='set the prefix string to use for the animation filenames, overriding the one in info.txt (should be 2-3 characters long)')
+        help='set the prefix string to use for the animation filenames, overriding the one in info.txt (normally 2-3 characters long)')
     parser_import.add_argument('--case', choices=['lower', 'upper'],
         help='set the capitalization to use for the animation filenames, overriding the one in info.txt')
     parser_import.set_defaults(func=handleImport)

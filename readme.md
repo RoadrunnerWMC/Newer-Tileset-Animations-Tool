@@ -68,7 +68,7 @@ Importing is done with the "import" (or "i", for short) command.
                             animation filename prefixes!
       --pa {0,1,2,3}        tileset number (default: infer from tileset filename)
       --prefix PREFIX       set the prefix string to use for the animation
-                            filenames, overriding the one in info.txt (should be
+                            filenames, overriding the one in info.txt (normally
                             2-3 characters long)
       --case {lower,upper}  set the capitalization to use for the animation
                             filenames, overriding the one in info.txt
