@@ -307,7 +307,7 @@ def main(args=None):
         help='what to save the output file as (default: overwrite the input file)')
     parser_import.add_argument('--add', action='store_true',
         help="don't delete existing animation data for other tiles in the tileset. Warning: this may result in inconsistent tilesets with multiple different animation filename prefixes!")
-    parser_import.add_argument('--pa', choices=[0, 1, 2, 3],
+    parser_import.add_argument('--pa', choices=[0, 1, 2, 3], type=int,
         help='tileset number (default: infer from tileset filename)')
     parser_import.add_argument('--prefix',
         help='set the prefix string to use for the animation filenames, overriding the one in info.txt (normally 2-3 characters long)')
